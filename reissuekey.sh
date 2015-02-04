@@ -50,6 +50,16 @@
 #
 ####################################################################################################
 #
+## If Screen is Sleeping then exit
+python -c 'import sys,Quartz; d=Quartz.CGSessionCopyCurrentDictionary(); sys.exit(d and d.get("CGSSessionScreenIsLocked", 0) == 0 and d.get("kCGSSessionOnConsoleKey", 0) == 1)'
+if [ $? = 0 ];
+	then
+	echo "Screen is sleeping"
+exit 404
+else
+	echo "Screen is awake"
+
+
 ## Get the logged in user's name
 userName=$(/usr/bin/stat -f%Su /dev/console)
 
@@ -119,5 +129,5 @@ else
 	echo "$(/usr/bin/sw_vers -productVersion)"
 	exit 5
 fi
-
+fi
 exit 0
