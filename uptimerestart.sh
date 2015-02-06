@@ -27,5 +27,5 @@ PROMPT_DESCRIPTION="Your Mac has been awake for `echo $(($DIFF / $DAY))` days.
 
 For optimal performance please reboot your machine :) "
 
-#Display Evernote branded prompt explaing the password prompt.
+#Display Evernote branded prompt with reboot reminder.
 /Library/Application\ Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper -windowType hud -lockHUD -icon "$LOGO" -title "$PROMPT_TITLE" -heading "$PROMPT_HEADING" -description "$PROMPT_DESCRIPTION" -button1 "OK" -defaultButton 1
